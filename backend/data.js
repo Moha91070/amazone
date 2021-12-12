@@ -1,8 +1,23 @@
+import bcrypt from 'bcryptjs';
+
 const data = {
+    users:[
+        {
+            name: 'Mohamed',
+            email: 'admin@gmail.com',
+            password: bcrypt.hashSync('1234', 8),
+            isAdmin: true
+        },
+        {
+            name: 'Bilal',
+            email: 'bilal@gmail.com',
+            password: bcrypt.hashSync('1234', 8),
+            isAdmin: false
+        }
+    ],
     products:[
         {
-            _id:'1',
-            name:'Nike Slim Shirts',
+            name:'Nike Slim Shirts 1',
             category: 'Shirts',
             image:'/images/product-1.jpeg',
             price:117,
@@ -13,8 +28,7 @@ const data = {
             description: 'hight quality product'
         },
         {
-            _id:'2',
-            name:'Pantalon',
+            name:'Pantalon 1',
             category: 'Shirts',
             image:'/images/product-2.jpeg',
             price:117,
@@ -25,8 +39,7 @@ const data = {
             description: 'hight quality product'
         },
         {
-            _id:'3',
-            name:'Nike Slim Shirts',
+            name:'Nike Slim Shirts 2',
             category: 'Shirts',
             image:'/images/product-1.jpeg',
             price:117,
@@ -37,8 +50,7 @@ const data = {
             description: 'hight quality product'
         },
         {
-            _id:'4',
-            name:'Nike Slim Shirts',
+            name:'Nike Slim Shirts 3',
             category: 'Shirts',
             image:'/images/product-2.jpeg',
             price:117,
@@ -49,8 +61,7 @@ const data = {
             description: 'hight quality product'
         }, 
         {
-            _id:'5',
-            name:'Nike Slim Shirts',
+            name:'Nike Slim Shirts 4',
             category: 'Shirts',
             image:'/images/product-1.jpeg',
             price:117,
@@ -61,8 +72,7 @@ const data = {
             description: 'hight quality product'
         },
         {
-            _id:'6',
-            name:'Nike Slim Shirts',
+            name:'Nike Slim Shirts 5',
             category: 'Shirts',
             image:'/images/product-2.jpeg',
             price:117,

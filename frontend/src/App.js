@@ -15,7 +15,7 @@ function App() {
         <header className="row">
           <div>
             <Link className="brand" to="/">
-              amazona
+              amazone
             </Link>
           </div>
           <div>

@@ -10,6 +10,7 @@ function HomeScreen() {
   const dispatch = useDispatch();
   const productList = useSelector(state => state.productList);
   const { loading, error, products } = productList;
+  console.log(products);
 
   useEffect(() => {
     dispatch(listProducts())
@@ -21,8 +22,8 @@ function HomeScreen() {
       : error ? <MessageBox variant="danger">{error}</MessageBox>
       :( 
         <div className="row center">
-          {products.map((product) => (
-          <Product key={product._id} product={product}></Product>
+          {products.products.map((product) => (
+          <Product key={product._id} product={product}/>
           ))}
         </div>
       )}
