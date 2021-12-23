@@ -27,10 +27,11 @@ export default function ProductScreen(props){
             <div>
             <Link to="/">Retour</Link>
             <div className="row top">
-                <div className="col-2">
-                    <img className="large" src={product.product.image} alt={product.product.name}/>
+                <div className="col-2 " style={{ width: "80%" }}>
+                    <img className="largeProduct" src={product.product.image} alt={product.product.name}/>
                 </div>
                 <div className="col-1">
+                    <div className="card card-body">
                     <ul>
                         <li>
                             <h1>{product.product.name}</h1>
@@ -46,6 +47,7 @@ export default function ProductScreen(props){
                             <p>{product.product.description}</p>
                         </li>
                     </ul>
+                    </div>
                 </div>
                 <div className="col-1">
                     <div className="card card-body">

@@ -142,6 +142,9 @@ img.medium {
 img.large {
   width: 100%;
 }
+img.largeProduct {
+  width: 95%;
+}
 /* Card */
 .card {
   border: 0.1rem #c0c0c0 solid;

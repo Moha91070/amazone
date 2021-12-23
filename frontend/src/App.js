@@ -37,7 +37,7 @@ function App() {
             {(userInfo) ?
                 (
                     <div className="dropdown">
-                    <Link to="#">{userInfo.name} <i className="fa fa-caret-down"></i> </Link>
+                    <Link to="#">{userInfo.name} <i className="fa fa-caret-down"/> </Link>
                     <ul className="dropdown-content">
                       <Link to="#signout" onClick={signoutHandler}>Sign Out</Link>
                     </ul>

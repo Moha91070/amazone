@@ -4,12 +4,12 @@ import {useDispatch, useSelector} from "react-redux";
 import {addToCart, removeFromCart} from "../actions/cartActions";
 import MessageBox from "../components/MessageBox";
 
-export default function CartScreen(props) {
+export default function CartScreen() {
     const location = useLocation();
     const { id } = useParams();
     const productId = id;
     const qty = location.search 
-    ? Number(location.search.split('=')[1]) 
+    ? Number(location.search.split('=')[1])
     : 1;
     const cart = useSelector(state => state.cart);
     const {cartItems} = cart;
@@ -28,7 +28,7 @@ export default function CartScreen(props) {
             <div className="col-2">
                 <h1>Shopping cart</h1>
                 {cartItems.length === 0
-                ?<MessageBox>Cart is empty. <Link to="/"> Go shopping</Link>
+                ?<MessageBox>Cart is empty. <Link to="/">Go shopping</Link>
                 </MessageBox>
                 : (
                     <ul>
