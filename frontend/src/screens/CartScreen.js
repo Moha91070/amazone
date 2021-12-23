@@ -85,7 +85,7 @@ export default function CartScreen(props) {
                             </h2>
                         </li>
                         <li>
-                            <a href="/signin?redirect=shipping">
+                            <a href="/shipping">
                             <button type="button"
                                     className="primary block"
                                     disabled={cartItems.length === 0}
