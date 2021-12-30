@@ -3,7 +3,6 @@ import axios from 'axios';
 
 export const addToCart = (productId, qty) =>async(dispatch, getState) =>{
     const {data} = await axios.get(`/api/products/${productId}`);
-    console.log(data.product);
     dispatch({
         type: CART_ADD_ITEM,
         payload:{

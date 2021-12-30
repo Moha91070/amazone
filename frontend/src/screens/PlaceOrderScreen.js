@@ -13,7 +13,7 @@ export function PlaceOrderScreen(props) {
     const {loading, success, error, order} = orderCreate;
     const toPrice = (num) => Number(num.toFixed(2));
     cart.itemsPrice = toPrice(cart.cartItems.reduce((a, c) => a + c.qty * c.price, 0));
-    cart.shippingPrice = cart.itemsPrice > 100 ? toPrice(0) : toPrice(10);
+    cart.shippingPrice = cart.itemsPrice > 100 ? toPrice(0) : toPrice(0);
     cart.taxPrice = toPrice(0.20 * cart.itemsPrice);
     cart.totalPrice = toPrice(cart.itemsPrice + cart.shippingPrice + cart.taxPrice);
     const dispatch = useDispatch();

@@ -6,7 +6,6 @@ import {
     USER_SIGNIN_SUCCESS,
     USER_SIGNOUT
 } from "../constants/userConstants";
-import {PRODUCT_DETAILS_FAIL} from "../constants/productConstants";
 import axios from "axios";
 
 export const register = (name, email, password) => async(dispatch) =>{

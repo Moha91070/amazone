@@ -10,3 +10,5 @@
 packahe_lock.json
 yarn-error.log*
 npm-debug.log*
+/frontend/node_modules/
+/node_modules

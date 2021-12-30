@@ -13,7 +13,6 @@ export default function ProductScreen(props){
     const [qty, setQty] = useState(1);
     const productDetails = useSelector((state) => state.productDetails);
     const { loading, error, product } = productDetails;
-    console.log(product)
     
     useEffect(() =>{
         dispatch(detailsProduct(productId));
