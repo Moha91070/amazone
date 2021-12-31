@@ -12,6 +12,8 @@ import PaymentMethodScreen from "./screens/PaymentMethodScreen";
 import {PlaceOrderScreen} from "./screens/PlaceOrderScreen";
 import {OrderScreen} from "./screens/OrderScreen";
 import OrderHistoryScreen from "./screens/OrderHistoryScreen";
+import ProfileScreen from "./screens/ProfileScreen";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   const cart = useSelector(state => state.cart);
@@ -45,6 +47,9 @@ function App() {
                         <Link to="/orderhistory" >Order History</Link>
                       </li>
                       <li>
+                        <Link to="/profile" >User Profile</Link>
+                      </li>
+                      <li>
                         <Link to="#signout" onClick={signoutHandler}>Sign Out</Link>
                       </li>
                     </ul>
@@ -52,6 +57,25 @@ function App() {
                 : (
                     <Link to="/signin">Sign In </Link>
                 )}
+            {userInfo && userInfo.isAdmin && (
+                <div className="dropdown">
+                  <Link to="#admin">Admin {' '} <i className="fa fa-caret-down"/></Link>
+                  <ul className="dropdown-content">
+                    <li>
+                      <Link to="/dashboard">Dashboard</Link>
+                    </li>
+                    <li>
+                      <Link to="/productlist">Products</Link>
+                    </li>
+                    <li>
+                      <Link to="/orderlist">orders</Link>
+                    </li>
+                    <li>
+                      <Link to="/userlist">Users</Link>
+                    </li>
+                  </ul>
+                </div>
+            )}
           </div>
         </header>
         <main>
@@ -65,6 +89,11 @@ function App() {
             <Route path="/placeorder" element={<PlaceOrderScreen/>}/>
             <Route path="/order/:id" element={<OrderScreen/>}/>
             <Route path="orderhistory" element={<OrderHistoryScreen/>}/>
+            <Route path="/profile" element={
+              <PrivateRoute>
+                <ProfileScreen/>
+              </PrivateRoute>
+            }/>
             <Route exact path="/" element={<HomeScreen/>}/>
           </Routes>
         </main>
